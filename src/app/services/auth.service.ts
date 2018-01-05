@@ -3,7 +3,7 @@ import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient } from '@angular/common/http'; 
 import { Token } from '../models/Token';
 
-const Api_Url = 'http://kcpelevennoteapie.azurewebsites.net';
+const Api_Url = 'http://localhost:65475/';
 
 @Injectable()
 export class AuthService {
@@ -11,7 +11,7 @@ export class AuthService {
   constructor( private _http: HttpClient) { }
 
   register(regUserData: RegisterUser) {
-    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
+    return this._http.post(`${Api_Url}api/Account/Register`, regUserData);
   }
 
   login(loginInfo) {
