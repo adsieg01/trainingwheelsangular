@@ -1,6 +1,12 @@
 <mat-toolbar color="primary">
-    <span>Training Wheels</span>
-    <span class="example-fill-remaining-space"></span>
-    <button mat-raised-button class="nav-btn" routerLink="/register">Register</button>
-    <button mat-raised-button class="nav-btn" routerLink ="/login">Login</button>
-  </mat-toolbar>
+  <button mat-button id="title-btn" routerLink="/">Training Wheels</button>
+  <span class="example-fill-remaining-space"></span>
+  <button mat-raised-button class="nav-btn" routerLink="/register"
+    *ngIf="!isLoggedIn">Register</button>
+  <button mat-raised-button class="nav-btn" routerLink ="/login"
+    *ngIf="!isLoggedIn">Login</button>
+  <form (ngSubmit)="onLogoutClicked()">
+    <button mat-raised-button class="nav-btn"
+      *ngIf="isLoggedIn" type="submit">Logout</button>
+  </form>
+</mat-toolbar>
