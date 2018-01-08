@@ -1,6 +1,10 @@
 <mat-toolbar color="primary">
     <span>Training Wheels</span>
     <span class="example-fill-remaining-space"></span>
-    <button mat-raised-button class="nav-btn" routerLink="/register">Register</button>
-    <button mat-raised-button class="nav-btn" routerLink ="/login">Login</button>
+    <button mat-raised-button class="nav-btn" routerLink="/register"
+      ng-if="!user.signedIn">Register</button>
+    <button mat-raised-button class="nav-btn" routerLink ="/login"
+      ng-if="!user.signedIn">Login</button>
+    <button mat-raised-button class="nav-btn"
+      ng-if="!user.signedIn">Logout</button>
   </mat-toolbar>
