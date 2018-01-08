@@ -30,8 +30,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log("OnSubmit:", this._registerForm.value);
-    this._authService
-      .register(this._registerForm.value)
-      .subscribe( () => this._authService.login(this._registerForm.value));
+    this._authService.login(this._registerForm.value);
   }
 }

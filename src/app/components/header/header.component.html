@@ -2,9 +2,9 @@
     <button mat-button id="title-btn" routerLink="/">Training Wheels</button>
     <span class="example-fill-remaining-space"></span>
     <button mat-raised-button class="nav-btn" routerLink="/register"
-      ng-if="!user.signedIn">Register</button>
+      *ngIf="!isLoggedIn">Register</button>
     <button mat-raised-button class="nav-btn" routerLink ="/login"
-      ng-if="!user.signedIn">Login</button>
+      *ngIf="!isLoggedIn">Login</button>
     <button mat-raised-button class="nav-btn"
-      ng-if="!user.signedIn">Logout</button>
+      *ngIf="isLoggedIn" type="logoutClicked">Logout</button>
   </mat-toolbar>
