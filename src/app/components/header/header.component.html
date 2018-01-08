@@ -5,6 +5,8 @@
       *ngIf="!isLoggedIn">Register</button>
     <button mat-raised-button class="nav-btn" routerLink ="/login"
       *ngIf="!isLoggedIn">Login</button>
-    <button mat-raised-button class="nav-btn"
-      *ngIf="isLoggedIn" type="logoutClicked">Logout</button>
+    <form (ngSubmit)="onLogoutClicked()">
+      <button mat-raised-button class="nav-btn"
+        *ngIf="isLoggedIn" type="submit">Logout</button>
+    </form>
   </mat-toolbar>
