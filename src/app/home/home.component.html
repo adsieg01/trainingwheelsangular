@@ -1,3 +1,16 @@
 <p>
   home works!
 </p>
+<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+<br />
+<mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+<br />
+<mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+<br />
+<mat-form-field>
+  <mat-select placeholder="Category">
+    <mat-option *ngFor="let category of categories" [value]="category.value">
+      {{ category.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
