@@ -1,0 +1,13 @@
+<label>Category:</label>
+<select [(ngModel)]="selectedCategory.id" (change)="onSelect($event.target.value)">
+  <option value="0">--Select--</option>
+  <option *ngFor="category of categories" value= {{category.id}}>{{category.name}}</option>
+</select>
+<br /><br />
+<div>
+<label>Activity:</label>
+<select>
+    <option *ngIf='selectedCategory.id == 0' value="0">--Select--</option>
+    <option *ngFor="activity of activities" value= {{activity.id}}>{{activity.name}}</option>
+</select>
+</div>

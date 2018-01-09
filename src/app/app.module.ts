@@ -20,6 +20,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
+import { CategoryListComponent } from './components/categorylist/categorylist.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
@@ -34,7 +35,8 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
