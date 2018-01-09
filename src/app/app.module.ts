@@ -9,7 +9,9 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatProgressBarModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -44,7 +46,9 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule,
+    MatSelectModule
   ],
   providers: [
     AuthService
