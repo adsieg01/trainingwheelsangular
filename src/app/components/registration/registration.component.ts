@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 import { AuthService } from '../../services/auth.service';
 
@@ -21,13 +21,19 @@ export class RegistrationComponent implements OnInit {
   }
 
   createForm() {
-    this._registerForm = this._form.group({
-      email: new FormControl,
-      password: new FormControl,
-      confirmPassword: new FormControl
+    this._registerForm = new FormGroup({
+      'email': new FormControl('' , [Validators.required, Validators.email]),
+      'password': new FormControl('', [Validators.required, Validators.minLength(4)]),
+      'confirmPassword': new FormControl('', [Validators.required])
     });
     console.log("createForm:", this._registerForm.value);
   }
+
+  get email() { return this._registerForm.get('email') }
+
+  get password() { return this._registerForm.get('password') }
+
+  get confirmPassword() { return this._registerForm.get('confirmPassword')}
 
   onSubmit() {
     console.log("OnSubmit:", this._registerForm.value);

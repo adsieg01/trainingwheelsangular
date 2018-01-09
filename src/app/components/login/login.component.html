@@ -7,11 +7,13 @@
     <div>
       <mat-form-field>
         <input matInput placeholder="Email" formControlName="email" type="email" required/>
+        <mat-error *ngIf="_registerForm.invalid">Email is required</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
         <input matInput placeholder="Password" formControlName="password" type="password" required/>
+        <mat-error *ngIf="_registerForm.invalid">Password is required</mat-error>
       </mat-form-field>
     </div>
   </div>
