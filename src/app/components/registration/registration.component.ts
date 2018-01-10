@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
         return passwordConfirmationInput.setErrors({notEquivalent: true})
       }
       else {
-        return passwordConfirmationInput.setErrors(null);
+        return null;
       }
     }
   }
