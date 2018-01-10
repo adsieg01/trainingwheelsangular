@@ -21,11 +21,12 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
+import { CategoryService } from './services/category.service';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: CategoryListComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -53,7 +54,8 @@ const routes = [
     MatSelectModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

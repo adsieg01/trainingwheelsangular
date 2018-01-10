@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     {value: 'fam', viewValue: 'Called a family member', actid: '3'},
     {value: 'group', viewValue: 'Group activity', actid: '3'},
     {value: 'drink', viewValue: 'Responsibly enjoyed intoxicants', actid: '3'},
-    {value: 'irl', viewValue: 'Hung out with someone in person', actid: '3'},
+    // {value: 'irl', viewValue: 'Hung out with someone in person', actid: '3'},
     {value: 'dog', viewValue: 'Met a new dog', actid: '3'},
     {value: 'appoint', viewValue: 'Kept an appointment', actid: '4'},
     {value: 'date', viewValue: 'Remembered an important date', actid: '4'},
