@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
   get password() { return this._registerForm.get('password') }
 
   get confirmPassword() { return this._registerForm.get('confirmPassword')}
-
+  
   onSubmit() {
     console.log("OnSubmit:", this._registerForm.value);
     this._authService
