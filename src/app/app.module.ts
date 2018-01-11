@@ -19,7 +19,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './home/home.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
 import { CategoryService } from './services/category.service';
 
@@ -36,7 +35,6 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent,
     CategoryListComponent
   ],
   imports: [
