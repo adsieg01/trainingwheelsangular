@@ -13,6 +13,8 @@ const Api_Url = 'http://localhost:65475';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  
+  // Declare variable that determines if there has been an http error response or not, to a login request
   loginError: boolean;
 
   constructor( private _http: HttpClient, private _router: Router) { }
@@ -31,6 +33,7 @@ export class AuthService {
       this.isLoggedIn.next(true);
       this._router.navigate(['/'])},
       (error) => {
+        // sets the error that a login failed
         this.loginError = true;
       }
     );
