@@ -21,11 +21,12 @@ export class RegistrationComponent implements OnInit {
   }
 
   createForm() {
-    this._registerForm = new FormGroup({
+    this._registerForm = this._form.group({
       'email': new FormControl('' , [Validators.required, Validators.email]),
       'password': new FormControl('', [Validators.required, Validators.minLength(4)]),
-      'confirmPassword': new FormControl('', [Validators.required])
-    });
+      'confirmPassword': new FormControl('', [Validators.required])},
+      {validator: this.checkIfMatchingPasswords('password', 'confirmPassword')}
+    );
     console.log("createForm:", this._registerForm.value);
   }
 
@@ -34,7 +35,20 @@ export class RegistrationComponent implements OnInit {
   get password() { return this._registerForm.get('password') }
 
   get confirmPassword() { return this._registerForm.get('confirmPassword')}
-  
+
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+        passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+        return null;
+      }
+    }
+  }
+
   onSubmit() {
     console.log("OnSubmit:", this._registerForm.value);
     this._authService

@@ -9,7 +9,7 @@ import { Activity } from '../../models/Activity';
   providers: [CategoryService]
 })
 export class CategoryListComponent {
-  selectedCategory:Category = new Category(1, 'Health and Wellness');
+  selectedCategory:Category = new Category(0, '--Select--');
   categories: Category[];
   activities: Activity[];
 
