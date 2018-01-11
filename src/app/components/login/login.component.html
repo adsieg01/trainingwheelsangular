@@ -8,7 +8,7 @@
       <div>
         <mat-form-field>
           <input matInput placeholder="Email" formControlName="email" type="email" required/>
-          <mat-error *ngIf="_registerForm.invalid">Email is required</mat-error>
+          <mat-error *ngIf="_registerForm.invalid">Invalid email</mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -22,4 +22,5 @@
   </form>
   <br>
   <button mat-raised-button class="nav-btn" color="primary" routerLink="/register">Don't have an account?</button>
+  <mat-error *ngIf="this._authService.loginError"><br/>Incorrect username or password</mat-error>
 </div>
