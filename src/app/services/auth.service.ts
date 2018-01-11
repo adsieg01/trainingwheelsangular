@@ -5,6 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { error } from 'util';
 
 const Api_Url = 'http://localhost:65475';
 
@@ -12,6 +13,7 @@ const Api_Url = 'http://localhost:65475';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  loginError: boolean;
 
   constructor( private _http: HttpClient, private _router: Router) { }
 
@@ -27,8 +29,11 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this._router.navigate(['/']);
-    });
+      this._router.navigate(['/'])},
+      (error) => {
+        this.loginError = true;
+      }
+    );
   }
 
   currentUser(): Observable<Object> {
