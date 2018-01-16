@@ -8,6 +8,9 @@
 <label>Activity:</label>
 <select>
     <option *ngIf='selectedCategory.id == 0' value="0">--Select--</option>
-    <option *ngFor="let activity of activities" value= {{activity.id}}>{{activity.name}}</option>
+    <option *ngFor="let activity of activities" value= {{activity.ActivityID}}>{{activity.Name}}</option>
 </select>
 </div>
+<br />
+<button mat-raised-button class="nav-btn" color="primary" type="submit" (click)="onSubmit(id)">Submit</button>
+

@@ -1,3 +1,6 @@
-export class Activity {
-    constructor(public id: number, public catid: number, public name: string) { }
+export interface Activity {
+    ActivityId: number;
+    Name: string;
+    Category: number;
+    Score: number;
 }
