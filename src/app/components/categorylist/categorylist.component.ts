@@ -15,6 +15,7 @@ export class CategoryListComponent {
   selectedActivity;
   categories: Category[];
   activities: Activity[];
+  showWeeklyArchive = false;
   
 
   constructor(private _categoryservice: CategoryService) {
