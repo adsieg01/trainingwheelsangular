@@ -34,6 +34,7 @@ export class AuthService {
       this._router.navigate(['/'])},
       (error) => {
         // sets the error that a login failed
+        console.log('Http error found')
         this.loginError = true;
       }
     );
