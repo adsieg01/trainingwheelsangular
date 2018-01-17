@@ -23,6 +23,7 @@ import { CategoryListComponent } from './components/categorylist/categorylist.co
 import { CategoryService } from './services/category.service';
 import { NotespaceService } from './services/notespace.service';
 import { NotespaceComponent } from './components/notespace/notespace.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
@@ -39,7 +40,8 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     CategoryListComponent,
-    NotespaceComponent
+    NotespaceComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
