@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {
   MatToolbarModule,
@@ -22,11 +23,15 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
 import { CategoryService } from './services/category.service';
+import { ScoreBarsComponent } from './components/scorebars/scorebars.component';
+import { ScoreBarService } from './services/scorebar.service';
+import { LogoComponent } from './logo/logo.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   { path: '', component: CategoryListComponent },
+  { path: 'scorebars', component: ScoreBarsComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -37,7 +42,9 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    ScoreBarsComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,8 @@ const routes = [
   ],
   providers: [
     AuthService,
-    CategoryService
+    CategoryService,
+    ScoreBarService
   ],
   bootstrap: [AppComponent]
 })
