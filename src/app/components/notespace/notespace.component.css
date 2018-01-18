@@ -5,3 +5,7 @@
 .container.note {
     margin: 1.5em 0 0 10%;
 }
+
+.container.error {
+    margin: 4em 0 0 1em;
+}
