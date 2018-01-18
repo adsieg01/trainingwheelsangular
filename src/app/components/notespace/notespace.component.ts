@@ -10,13 +10,15 @@ import { NotespaceService } from "../../services/notespace.service";
   styleUrls: ['./notespace.component.css']
 })
 export class NotespaceComponent implements OnInit {
+  loggedIn: string;
   notespace: Notespace;
 
   private _editNotespaceForm: FormGroup;
   constructor(private _form: FormBuilder,
               private _notespaceService: NotespaceService,
               private _ar: ActivatedRoute,
-              private _router: Router) { 
+              private _router: Router
+            ) { 
                 this._ar.paramMap.subscribe(p => {
                   this._notespaceService.getNotespace().subscribe((singleNotespace: Notespace) => {
                     this.notespace = singleNotespace;
@@ -26,6 +28,7 @@ export class NotespaceComponent implements OnInit {
               }
 
   ngOnInit() {
+    this.loggedIn = this._notespaceService.getLoggedIn();
   }
 
   createForm() {

@@ -30,6 +30,7 @@ export class AuthService {
     return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
+      localStorage.setItem('login', '1')
       this.isLoggedIn.next(true);
       this._router.navigate(['/'])},
       (error) => {
@@ -49,7 +50,7 @@ export class AuthService {
   logout(): Observable<Object> {
     localStorage.clear();
     this.isLoggedIn.next(false);
-
+    this._router.navigate(['/']);
     return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
   }
 

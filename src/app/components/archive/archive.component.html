@@ -1,0 +1,24 @@
+<h1>Archive</h1>
+
+<hr>
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="Category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let archive"> {{getCategory(archive.Category)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Activity">
+      <mat-header-cell *matHeaderCellDef> Activity </mat-header-cell>
+      <mat-cell *matCellDef="let archive"> {{archive.Name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="DateTime">
+      <mat-header-cell *matHeaderCellDef> Submitted </mat-header-cell>
+      <mat-cell *matCellDef="let archive"> {{archive.CreatedUtc | date:'fullDate'}}</mat-cell>
+    </ng-container>
+  </mat-table>
+</div>

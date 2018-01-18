@@ -22,4 +22,7 @@ export class NotespaceService {
     return this._http.put(`${ApiUrl}/Notespace`, notespace, { headers: this.getHeaders() });
   }
 
+  getLoggedIn() {
+    return localStorage.getItem('login')
+  }
 }
