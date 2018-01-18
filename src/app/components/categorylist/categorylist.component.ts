@@ -50,9 +50,7 @@ export class CategoryListComponent {
   }
 
   onSubmit(actId) {
-    this._categoryservice.getActivities();
-    let selected = { ActivityId: actId };
-    this._archiveService.createArchiveEntry(selected).subscribe(
+    this._archiveService.createArchiveEntry(actId).subscribe(
       data => {
         console.log(data);
         return true;
