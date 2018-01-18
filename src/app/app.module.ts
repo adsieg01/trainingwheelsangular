@@ -21,12 +21,15 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
 import { CategoryService } from './services/category.service';
+import { NotespaceService } from './services/notespace.service';
+import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   { path: '', component: CategoryListComponent },
+  { path: 'personalnotes', component: NotespaceComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -37,6 +40,7 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     CategoryListComponent,
+    NotespaceComponent,
     DialogComponent
   ],
   imports: [
@@ -55,7 +59,8 @@ const routes = [
   ],
   providers: [
     AuthService,
-    CategoryService
+    CategoryService,
+    NotespaceService
   ],
   bootstrap: [AppComponent]
 })
