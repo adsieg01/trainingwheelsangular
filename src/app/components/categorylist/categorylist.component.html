@@ -1,24 +1,29 @@
-<label>Category:</label>
-<select [(ngModel)]="selectedCategory.id" (change)="onSelect($event.target.value)">
-  <option value="0">--Select--</option>
-  <option *ngFor="let category of categories" value= {{category.id}}>{{category.name}}</option>
-</select>
-<br /><br />
 <div>
-<label>Activity:</label>
-<select>
-    <option *ngIf='selectedCategory.id == 0' value="0">--Select--</option>
-    <option *ngFor="let activity of activities" value= {{activity.ActivityID}}>{{activity.Name}}</option>
-</select>
-</div>
-<br />
-<button mat-raised-button class="nav-btn" color="primary" type="submit" (click)="onSubmit(id)">Submit</button>
+  <label>Category:</label>
+  <select [(ngModel)]="selectedCategory.id" (change)="onSelect($event.target.value)">
+    <option value="0">--Select--</option>
+    <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
+  </select>
 
-<br>
-<br>
-
-<app-dialog [(visible)]="showWeeklyArchive" (hasBeenClosed)="showWeeklyArchive = false">
-  <h1>The weekly archive lives here.</h1>
-  </app-dialog>
+  <br>
+  <br>
   
-<button mat-raised-button class="nav-btn" color="primary" (click)="showWeeklyArchive = true">Weekly Archive</button>
+  <div>
+    <label>Activity:</label>
+    <select [(ngModel)]="selectedActivity.ActivityId" (change)="onActivitySelect($event.target.value)">
+      <option *ngIf='selectedCategory.id == 0' value="0">--Select--</option>
+      <option *ngFor="let activity of activities" value={{activity.ActivityId}}>{{activity.Name}}</option>
+    </select>
+  </div>
+  <br />
+  <button mat-raised-button class="nav-btn" color="primary" type="submit" (click)="onSubmit(id)">Submit</button>
+
+  <br>
+  <br>
+
+  <app-dialog [(visible)]="showWeeklyArchive" (hasBeenClosed)="showWeeklyArchive = false">
+    <h1>The weekly archive lives here.</h1>
+  </app-dialog>
+
+  <button mat-raised-button class="nav-btn" color="primary" (click)="showWeeklyArchive = true">Weekly Archive</button>
+</div>
