@@ -4,13 +4,15 @@
     <option value="0">--Select--</option>
     <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
   </select>
-  <br />
-  <br />
+
+  <br>
+  <br>
+  
   <div>
     <label>Activity:</label>
     <select>
       <option *ngIf='selectedCategory.id == 0' value="0">--Select--</option>
-      <option *ngFor="let activity of activities" value={{activity.ActivityID}}>{{activity.Name}}</option>
+      <option *ngFor="let activity of activities" value={ {activity.ActivityID}}>{{activity.Name}}</option>
     </select>
   </div>
   <br />
