@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {
   MatToolbarModule,
@@ -22,6 +22,9 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
 import { CategoryService } from './services/category.service';
+import { ScoreBarsComponent } from './components/scorebars/scorebars.component';
+import { ScoreBarService } from './services/scorebar.service';
+import { LogoComponent } from './logo/logo.component';
 import { NotespaceService } from './services/notespace.service';
 import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -32,6 +35,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   { path: '', component: CategoryListComponent },
+  { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
@@ -43,6 +47,9 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
+    // HomeComponent,
+    CategoryListComponent,
+    ScoreBarsComponent,
     CategoryListComponent,
     NotespaceComponent,
     DialogComponent,
@@ -67,8 +74,9 @@ const routes = [
   providers: [
     AuthService,
     CategoryService,
+    ScoreBarService,
     NotespaceService,
-    ArchiveService
+    ArchiveService,
   ],
   bootstrap: [AppComponent]
 })

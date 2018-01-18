@@ -2,9 +2,19 @@
     flex: 1 1 auto;
 }
 
+.logo{
+    border-width: 2;
+    border-color: black;
+}
+
+.mat-toolbar{
+    background-color: #406487;
+    /* background-image: url("./src/images/leather.jpg"); */
+}
+
 .nav-btn {
     margin-right: 0.5em;
-    background-color: #132584
+    background-color: #132584;
 }
 
 #title-btn {
