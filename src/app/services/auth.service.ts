@@ -5,6 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { error } from 'util';
 
 const Api_Url = 'http://localhost:65475';
 
@@ -12,6 +13,9 @@ const Api_Url = 'http://localhost:65475';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  
+  // Declare variable that determines if there has been an http error response or not, to a login request
+  loginError: boolean;
 
   constructor( private _http: HttpClient, private _router: Router) { }
 
@@ -26,9 +30,15 @@ export class AuthService {
     return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
+      localStorage.setItem('login', '1')
       this.isLoggedIn.next(true);
-      this._router.navigate(['/']);
-    });
+      this._router.navigate(['/'])},
+      (error) => {
+        // sets the error that a login failed
+        console.log('Http error found')
+        this.loginError = true;
+      }
+    );
   }
 
   currentUser(): Observable<Object> {
@@ -40,7 +50,7 @@ export class AuthService {
   logout(): Observable<Object> {
     localStorage.clear();
     this.isLoggedIn.next(false);
-
+    this._router.navigate(['/']);
     return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
   }
 

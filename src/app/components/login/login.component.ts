@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 import { AuthService } from '../../services/auth.service';
 import { validateConfig } from '@angular/router/src/config';
+import { HttpErrorResponse } from '@angular/common/http/src/response';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     console.log("ngOnLoginInit", this._registerForm.value);
+    this._authService.loginError = false;
   }
 
   createForm() {
