@@ -22,9 +22,11 @@
   <br>
 
   <app-dialog [(visible)]="showWeeklyArchive" (hasBeenClosed)="showWeeklyArchive = false">
-    <h1>The weekly archive lives here.</h1>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit" routerLink="/archives">Take me to your leader</button>
+    <app-dailyarchive></app-dailyarchive>
+    <br>
+    <br>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit" routerLink="/archives">Weekly Archive</button>
   </app-dialog>
 
-  <button mat-raised-button class="nav-btn" color="primary" (click)="showWeeklyArchive = true">Weekly Archive</button>
+  <button mat-raised-button class="nav-btn" color="primary" (click)="showWeeklyArchive = true">Daily Archive</button>
 </div>

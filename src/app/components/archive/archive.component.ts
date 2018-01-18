@@ -32,7 +32,35 @@ export class ArchiveComponent implements OnInit {
     else if(categoryId == 5) return 'Organization and Commitments';
     else return 'You done fucked up, A-aron';
   }
+}
 
+@Component({
+  selector: 'app-dailyarchive',
+  templateUrl: './archive.component.html',
+  styleUrls: ['./archive.component.css']
+})
+export class ArchiveModalComponent implements OnInit {
+
+  archive: Archive[];
+  columnNames = ['Category', 'Activity', 'DateTime'];
+  dataSource: ArchiveDataSource | null;
+  constructor(private _categoryService: CategoryService, private _archiveService: ArchiveService) { }
+
+  ngOnInit() {
+    this._archiveService.getDailyArchives().subscribe((archive: Archive[]) => {
+      this.archive = archive;
+      this.dataSource = new ArchiveDataSource(archive);
+    });
+  }
+
+  getCategory(categoryId) {
+    if(categoryId == 1) return 'Health and Wellness';
+    else if(categoryId == 2) return 'Hygiene';
+    else if(categoryId == 3) return 'Finance';
+    else if(categoryId == 4) return 'Social';
+    else if(categoryId == 5) return 'Organization and Commitments';
+    else return 'You done fucked up, A-aron';
+  }
 }
 
 export class ArchiveDataSource extends DataSource<any> {

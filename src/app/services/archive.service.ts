@@ -19,6 +19,10 @@ export class ArchiveService {
     return this._http.get(`${Api_Url}/api/archive`, {headers: this.setHeader() } );
   }
 
+  getDailyArchives() {
+    return this._http.get(`${Api_Url}/api/archive/1`, {headers: this.setHeader() } ); 
+  }
+
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }

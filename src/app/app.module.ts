@@ -25,7 +25,7 @@ import { CategoryService } from './services/category.service';
 import { NotespaceService } from './services/notespace.service';
 import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { ArchiveComponent } from './components/archive/archive.component';
+import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
 
 const routes = [
@@ -46,7 +46,8 @@ const routes = [
     CategoryListComponent,
     NotespaceComponent,
     DialogComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    ArchiveModalComponent,
   ],
   imports: [
     BrowserModule,
