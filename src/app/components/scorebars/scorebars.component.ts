@@ -29,24 +29,23 @@ export class ScoreBarsComponent {
             this.chart = new Chart(scoreBars, {
                type: 'horizontalBar',
                data: {
-                 labels: ["blank"],
+                 labels: ["blank", "blank", "blank", "blank", "blank"],
                  datasets: [
                     {
-                      data: [30],
+                      data: [16],
                       backgroundColor: '#0B7C7C',
                       borderColor: "#000",
-                      footerMarginTop: 600, 
                       borderWidth: 2,
                       fill: true
                     },
                     {
-                      data: [10],
+                      data: [154],
                       borderColor: "#000",
                       borderWidth: 2,
                       fill: true
                     },
                     {
-                      data: [200],
+                      data: [62],
                       borderColor: "#000",
                       borderWidth: 2,
                       fill: true
