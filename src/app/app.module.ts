@@ -44,7 +44,6 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
-    // HomeComponent,
     CategoryListComponent,
     ScoreBarsComponent,
     CategoryListComponent,
