@@ -27,6 +27,9 @@ import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
+import { AdminModule } from './admin/admin.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
@@ -34,6 +37,9 @@ const routes = [
   { path: '', component: CategoryListComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
+  { path: 'admin', canActivate: [AdminGuard], children: [
+    { path: '', component: DashboardComponent }
+  ]},
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -63,12 +69,14 @@ const routes = [
     MatProgressBarModule,
     MatSelectModule,
     MatTableModule,
+    AdminModule,
   ],
   providers: [
     AuthService,
     CategoryService,
     NotespaceService,
-    ArchiveService
+    ArchiveService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })
