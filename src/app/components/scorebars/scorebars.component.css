@@ -1,5 +1,29 @@
 .barContainer{
-    width: 25%;
-    height: 30%;
-    display: block;
+    position: relative;
+    left: 5px;
+    right: 50px;
+    height: 300px;
+    width: 60%;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 30px;
+} 
+
+.chart{
+    position: relative;
+    padding-left: 10%;
+    width: 600px;
+}
+.categoryList{
+    float: left;
+    width: 200px;
+}
+
+ul{
+    float: right;
+    padding-top: 20px;
+}
+
+li{
+    padding-bottom: 35px;
 }

@@ -4,7 +4,7 @@ import { Archive } from '../models/Archive';
 import { Activity } from '../models/Activity';
 import 'rxjs/add/operator/map';
 
-const Api_Url = 'http://localhost:65475';
+const Api_Url = 'http://trainingwheels-2.apphb.com';
 
 @Injectable()
 export class ArchiveService {

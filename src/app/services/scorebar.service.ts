@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserInfo } from '../models/UserInfo';
 import 'rxjs/add/operator/map';
 
-const Api_Url = 'http://localhost:65475';
+const Api_Url = 'http://trainingwheels-2.apphb.com';
 
 @Injectable()
 export class ScoreBarService {
