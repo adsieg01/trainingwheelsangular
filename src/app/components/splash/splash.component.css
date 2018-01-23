@@ -1,0 +1,32 @@
+.mainlogo{
+    width: 50%;
+    padding-left: 22%;
+    padding-right: 22%;
+    padding-top: 30px;
+}
+
+.info{
+    padding: 20px;
+}
+
+h3 {
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    color: #2E4659
+}
+
+a:link {
+    color: #2E4659;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #2E4659;
+    text-decoration: none;
+}
+
+a:active {
+    color: #2E4659;
+    text-decoration: none;
+}

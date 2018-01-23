@@ -1,8 +1,12 @@
 .selectcontainer{
     position: relative;
-    padding-left: 30%;
+    padding-left: 20%;
+    padding-top: 30px;
     width: 100%;
 }
-.primary {
+.primary-color{
     color: #3E5F78!important;
+  }
+  .nav-button{
+      
   }

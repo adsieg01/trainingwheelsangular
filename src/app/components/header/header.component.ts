@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service'
 import { UserInfo } from '../../models/userInfo'
+import { MatIconModule } from '@angular/material';
 
 @Component({
   selector: 'app-header',

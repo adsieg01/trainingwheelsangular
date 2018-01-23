@@ -13,6 +13,7 @@ import {
   MatProgressBarModule,
   MatSelectModule,
   MatTableModule,
+  MatIconModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -29,11 +30,13 @@ import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
+import { SplashComponent } from './components/splash/splash.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
-  { path: '', component: CategoryListComponent },
+  { path: 'list', component: CategoryListComponent },
+  { path: '', component: SplashComponent },
   { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
@@ -53,6 +56,7 @@ const routes = [
     DialogComponent,
     ArchiveComponent,
     ArchiveModalComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +72,7 @@ const routes = [
     MatProgressBarModule,
     MatSelectModule,
     MatTableModule,
+    MatIconModule
   ],
   providers: [
     AuthService,

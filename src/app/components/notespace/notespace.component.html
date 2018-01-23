@@ -1,5 +1,9 @@
-<h1>Personal Notes</h1>
+<div class="notespace">
+  <!-- <div class="titlesection"> -->
+<h1>To-Do List</h1>
+<p>Use this space to jot down personal notes, things to remember, goals, motivational quotes, whatever</p>
 <hr>
+<!-- </div> -->
 
 <div *ngIf="loggedIn === '1'">
   <div *ngIf="notespace">
@@ -13,7 +17,7 @@
           </div>
           <div>
             <mat-form-field class="textbox">
-              <textarea matInput placeholder="Notes" formControlName="Note" type="Note" required [value]="notespace.Note"
+              <textarea matInput placeholder="What do you need to remember?" formControlName="Note" type="Note" required [value]="notespace.Note"
                 matTextareaAutosize matAutosizeMinRows="10" matAuthosizeMaxRows="30"></textarea>
             </mat-form-field>
           </div>
@@ -23,5 +27,5 @@
     </form>
   </div>
 </div>
-
+</div>
 <mat-error class="error container" *ngIf="loggedIn !=='1'">Must be logged in to make notes</mat-error>
