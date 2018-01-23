@@ -33,35 +33,35 @@ export class ScoreBarsComponent {
             // labels: ["blank", "blank", "blank", "blank", "blank"],
             datasets: [
               {
-                data: [30],
+                data: [CnOScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
                 fill: true
               },
               {
-                data: [10],
+                data: [HnWScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
                 fill: true
               },
               {
-                data: [200],
+                data: [HygScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
                 fill: true
               },
               {
-                data: [50],
+                data: [SocScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
                 fill: true
               },
               {
-                data: [100],
+                data: [FinScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
@@ -86,7 +86,7 @@ export class ScoreBarsComponent {
                   gridLines: {
                     offsetGridLines: false
                 },
-                  // display: false,
+                  display: false,
                   ticks: {
                     display: false 
                   }
