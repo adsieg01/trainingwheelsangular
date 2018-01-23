@@ -1,19 +1,29 @@
- <div class="chart">
+<div class="chart">
     <h1>
         Your Progress
     </h1>
-   <div class="categoryList">
-     <ul style="list-style: none;">
-        <li>Health and Wellness</li>
-        <li>Hygiene</li>
-        <li>Finance</li>
-        <li>Social</li>
-        <li>Organization and Commitments</li>
-     </ul>
+    <div class="categoryList">
+        <ul style="list-style: none;">
+            <li>Health and Wellness</li>
+            <li>Hygiene</li>
+            <li>Finance</li>
+            <li>Social</li>
+            <li>Organization and Commitments</li>
+        </ul>
     </div>
-<div class="barContainer">
- <canvas id="scoreBars" width="400" height="400">
-      {{ chart }}
-  </canvas>
+    <div class="barContainer">
+        <canvas id="scoreBars" width="400" height="400">
+            {{ chart }}
+        </canvas>
+    </div>
 </div>
+
+<div id="scoreTracker">
+    <h1>Your current score: {{totalScore}}</h1>
+    <h3>You are currently:</h3>
+    <p *ngIf="(totalScore < 1000)">A trash human! For real, take a shower sometime.</p>
+    <p *ngIf="(totalScore > 999 && totalScore < 1801)">Peter Pan! Let us know when you're done with Neverland.</p>
+    <p *ngIf="(totalScore > 1800 && totalScore < 2700)">A perfectly normal person! You could go a little harder though.</p>
+    <p *ngIf="(totalScore > 2699 && totalScore < 3501)">A real adult! Congratulations, you're pretty much as close to winning as we get.</p>
+    <p *ngIf="(totalScore > 3500)">The human embodiment of a slow clap! Like, actually though. Are you gonna do my taxes or what, nerd?</p>
 </div>
