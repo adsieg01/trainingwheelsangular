@@ -1,13 +1,14 @@
-<div>
+<app-scorebars></app-scorebars>
+<div class="selectcontainer">
+
   <label>Category:</label>
   <select [(ngModel)]="selectedCategory.id" (change)="onSelect($event.target.value)">
     <option value="0">--Select--</option>
     <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
   </select>
+  <br>
+  <br>
 
-  <br>
-  <br>
-  
   <div>
     <label>Activity:</label>
     <select [(ngModel)]="selectedActivity.ActivityId" (change)="onActivitySelect($event.target.value)">
