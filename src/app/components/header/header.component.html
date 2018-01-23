@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
-  <button mat-button id="title-btn" routerLink="/"><img src="assets/trainingwheelslogomini.svg" alt="mini logo"></button>
+  <button mat-button id="title-btn" routerLink="/splash"><img src="assets/trainingwheelslogomini.svg" alt="mini logo"></button>
+  <button mat-button *ngIf="isLoggedIn" routerLink="/list">Activities</button>
   <button mat-button *ngIf="isLoggedIn" routerLink="/personalnotes">Personal Notes</button>
   <button mat-button *ngIf="isLoggedIn" routerLink="/archives">Weekly Archive</button>
   <span class="example-fill-remaining-space"></span>

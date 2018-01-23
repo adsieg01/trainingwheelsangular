@@ -29,11 +29,13 @@ import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
+import { SplashComponent } from './components/splash/splash.component';
 
 const routes = [
+  {path: '', component: SplashComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
-  { path: '', component: CategoryListComponent },
+  { path: 'list', component: CategoryListComponent },
   { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
@@ -53,6 +55,7 @@ const routes = [
     DialogComponent,
     ArchiveComponent,
     ArchiveModalComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
