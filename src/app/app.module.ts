@@ -29,6 +29,9 @@ import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
+import { AdminModule } from './admin/admin.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminGuard } from './guards/admin.guard';
 import { SplashComponent } from './components/splash/splash.component';
 
 const routes = [
@@ -39,6 +42,9 @@ const routes = [
   { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
+  { path: 'admin', canActivate: [AdminGuard], children: [
+    { path: '', component: DashboardComponent }
+  ]},
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -71,6 +77,7 @@ const routes = [
     MatProgressBarModule,
     MatSelectModule,
     MatTableModule,
+    AdminModule,
   ],
   providers: [
     AuthService,
@@ -78,6 +85,7 @@ const routes = [
     ScoreBarService,
     NotespaceService,
     ArchiveService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@
   <button mat-button *ngIf="isLoggedIn" routerLink="/list">Activities</button>
   <button mat-button *ngIf="isLoggedIn" routerLink="/personalnotes">Personal Notes</button>
   <button mat-button *ngIf="isLoggedIn" routerLink="/archives">Weekly Archive</button>
+  <button mat-button *ngIf="isAdmin" routerLink="/admin">Admin</button>
   <span class="example-fill-remaining-space"></span>
   <button mat-raised-button class="nav-btn" routerLink="/register"
     *ngIf="!isLoggedIn">Register</button>
