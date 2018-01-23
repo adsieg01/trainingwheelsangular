@@ -20,24 +20,15 @@ export class ScoreBarsComponent {
     var scoreBars = document.getElementById('scoreBars');
     this._scoreBar.scoreTrack()
       .subscribe(res => {
-        let CnOScore = res['CnOScore']
         let HnWScore = res['HnWScore']
         let HygScore = res['HygScore']
-        let SocScore = res['SocScore']
         let FinScore = res['FinScore']
-        console.log(CnOScore);
+        let SocScore = res['SocScore']
+        let CnOScore = res['CnOScore']
         this.chart = new Chart(scoreBars, {
           type: 'horizontalBar',
           data: {
-            // labels: ["blank", "blank", "blank", "blank", "blank"],
             datasets: [
-              {
-                data: [CnOScore],
-                backgroundColor: '#68000D',
-                borderColor: "transparent",
-                borderWidth: 0,
-                fill: true
-              },
               {
                 data: [HnWScore],
                 backgroundColor: '#68000D',
@@ -53,6 +44,13 @@ export class ScoreBarsComponent {
                 fill: true
               },
               {
+                data: [FinScore],
+                backgroundColor: '#68000D',
+                borderColor: "transparent",
+                borderWidth: 0,
+                fill: true
+              },
+              {
                 data: [SocScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
@@ -60,7 +58,7 @@ export class ScoreBarsComponent {
                 fill: true
               },
               {
-                data: [FinScore],
+                data: [CnOScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,
