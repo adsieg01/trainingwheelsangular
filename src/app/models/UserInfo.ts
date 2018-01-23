@@ -7,5 +7,4 @@ export interface UserInfo {
     FinScore: number;
     SocScore: number;
     CnOScore: number;
-
 }

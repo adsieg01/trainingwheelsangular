@@ -9,7 +9,6 @@ const scoreBars = document.getElementById('scoreBars');
   selector: 'app-scorebars',
   templateUrl: './scorebars.component.html',
   styleUrls: ['./scorebars.component.css'],
-  providers: [ScoreBarService]
 })
 export class ScoreBarsComponent {
 
