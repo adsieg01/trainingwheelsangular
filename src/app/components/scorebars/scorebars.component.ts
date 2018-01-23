@@ -10,21 +10,22 @@ const scoreBars = document.getElementById('scoreBars');
   templateUrl: './scorebars.component.html',
   styleUrls: ['./scorebars.component.css'],
 })
-export class ScoreBarsComponent {
+export class ScoreBarsComponent implements OnInit {
 
+  totalScore: number;
   chart: any;
 
   constructor(private _scoreBar: ScoreBarService) { }
 
   ngOnInit() {
-    var scoreBars = document.getElementById('scoreBars');
+    let scoreBars = document.getElementById('scoreBars');
     this._scoreBar.scoreTrack()
       .subscribe(res => {
-        let HnWScore = res['HnWScore']
-        let HygScore = res['HygScore']
-        let FinScore = res['FinScore']
-        let SocScore = res['SocScore']
-        let CnOScore = res['CnOScore']
+        let HnWScore = res['HnWScore'];
+        let HygScore = res['HygScore'];
+        let FinScore = res['FinScore'];
+        let SocScore = res['SocScore'];
+        let CnOScore = res['CnOScore'];
         this.chart = new Chart(scoreBars, {
           type: 'horizontalBar',
           data: {
@@ -82,21 +83,25 @@ export class ScoreBarsComponent {
                 yAxes: [{
                   gridLines: {
                     offsetGridLines: false
-                },
+                  },
                   display: false,
                   ticks: {
-                    display: false 
+                    display: false
                   }
                 }],
                 xAxes: [{
                   gridLines: {
                     offsetGridLines: false
-                },
+                  },
                 }]
               }
             }
           }
         });
+      
+      this.totalScore = HnWScore + HygScore + FinScore + SocScore + CnOScore;
+
+      console.log(this.totalScore);
       }
       )
   }
