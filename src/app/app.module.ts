@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {
   MatToolbarModule,
@@ -22,6 +22,8 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/categorylist/categorylist.component';
 import { CategoryService } from './services/category.service';
+import { ScoreBarsComponent } from './components/scorebars/scorebars.component';
+import { ScoreBarService } from './services/scorebar.service';
 import { NotespaceService } from './services/notespace.service';
 import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -30,11 +32,14 @@ import { ArchiveService } from './services/archive.service';
 import { AdminModule } from './admin/admin.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminGuard } from './guards/admin.guard';
+import { SplashComponent } from './components/splash/splash.component';
 
 const routes = [
+  {path: '', component: SplashComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
-  { path: '', component: CategoryListComponent },
+  { path: 'list', component: CategoryListComponent },
+  { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
   { path: 'admin', canActivate: [AdminGuard], children: [
@@ -50,10 +55,13 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     CategoryListComponent,
+    ScoreBarsComponent,
+    CategoryListComponent,
     NotespaceComponent,
     DialogComponent,
     ArchiveComponent,
     ArchiveModalComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +82,7 @@ const routes = [
   providers: [
     AuthService,
     CategoryService,
+    ScoreBarService,
     NotespaceService,
     ArchiveService,
     AdminGuard

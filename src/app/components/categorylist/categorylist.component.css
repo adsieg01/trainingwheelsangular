@@ -1,0 +1,9 @@
+.selectcontainer{
+    position: relative;
+    padding-left: 30%;
+    width: 100%;
+    display: inline-block;
+}
+.primary {
+    color: #3E5F78!important;
+  }

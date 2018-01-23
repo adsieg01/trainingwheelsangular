@@ -9,6 +9,7 @@ import 'rxjs/add/observable/of';
 @Component({
   selector: 'app-categorylist',
   templateUrl: './categorylist.component.html',
+  styleUrls: ['./categorylist.component.css'],
   providers: [CategoryService,
     ArchiveService]
 })
@@ -53,6 +54,7 @@ export class CategoryListComponent {
     this._archiveService.createArchiveEntry(actId).subscribe(
       data => {
         console.log(data);
+        window.location.reload();
         return true;
       },
       error => {
