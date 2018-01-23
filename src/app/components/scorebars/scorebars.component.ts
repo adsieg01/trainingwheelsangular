@@ -28,7 +28,6 @@ export class ScoreBarsComponent {
         this.chart = new Chart(scoreBars, {
           type: 'horizontalBar',
           data: {
-            labels: ["blank", "blank", "blank", "blank", "blank"],
             datasets: [
               {
                 data: [HnWScore],
@@ -59,7 +58,7 @@ export class ScoreBarsComponent {
                 fill: true
               },
               {
-                data: [100],
+                data: [CnOScore],
                 backgroundColor: '#68000D',
                 borderColor: "transparent",
                 borderWidth: 0,

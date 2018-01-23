@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Notespace } from '../models/Notespace';
 import { Router } from '@angular/router/src/router';
 
-const ApiUrl = 'http:trainingwheels-2.apphb.com'
+const ApiUrl = 'http://localhost:65475'
+// const ApiUrl = 'http:trainingwheels-2.apphb.com'
 
 @Injectable()
 export class NotespaceService {
