@@ -7,8 +7,8 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { error } from 'util';
 
-const Api_Url = 'http://localhost:65475'
-// const Api_Url = 'http://trainingwheels-2.apphb.com';
+// const Api_Url = 'http://localhost:65475'
+const Api_Url = 'http://trainingwheels-4.apphb.com';
 
 @Injectable()
 export class AuthService {

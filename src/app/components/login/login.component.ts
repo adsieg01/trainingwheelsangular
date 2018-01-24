@@ -12,9 +12,9 @@ import { HttpErrorResponse } from '@angular/common/http/src/response';
 })
 export class LoginComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  public _registerForm: FormGroup;
 
-  constructor(private _form: FormBuilder, private _authService: AuthService) { 
+  constructor(private _form: FormBuilder, public _authService: AuthService) { 
     this.createForm();
   }
 

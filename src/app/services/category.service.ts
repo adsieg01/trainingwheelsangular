@@ -4,8 +4,8 @@ import { Activity } from '../models/Activity';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
-const Api_Url = 'http://localhost:65475'
-// const Api_Url = 'http://trainingwheels-2.apphb.com';
+// const Api_Url = 'http://localhost:65475'
+const Api_Url = 'http://trainingwheels-4.apphb.com';
 @Injectable()
 export class CategoryService {
   constructor(private _http: HttpClient) { }
