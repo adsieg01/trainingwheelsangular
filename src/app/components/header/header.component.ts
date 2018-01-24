@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service'
 import { UserInfo } from '../../models/userInfo'
-import { MatIconModule } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
+import { AdminGuard } from '../../guards/admin.guard';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ import { MatIconModule } from '@angular/material';
 export class HeaderComponent implements OnInit {
   username: string;
   isLoggedIn: boolean;
+  isAdmin = false;
 
   constructor(public authService: AuthService) { }
 
@@ -22,12 +24,14 @@ export class HeaderComponent implements OnInit {
       } else {
         this.isLoggedIn = false;
       }
-    });
-
+    } 
+  );
+    this.authService.isAdmin.subscribe(v => this.isAdmin = v);
     this.authService.isLoggedIn.subscribe(v => this.isLoggedIn = v);
   }
 
   onLogoutClicked() {
+    
     this.authService.logout();
   }
 }

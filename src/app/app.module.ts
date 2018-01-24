@@ -13,7 +13,6 @@ import {
   MatProgressBarModule,
   MatSelectModule,
   MatTableModule,
-  MatIconModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -30,9 +29,13 @@ import { NotespaceComponent } from './components/notespace/notespace.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ArchiveComponent, ArchiveModalComponent } from './components/archive/archive.component';
 import { ArchiveService } from './services/archive.service';
+import { AdminModule } from './admin/admin.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminGuard } from './guards/admin.guard';
 import { SplashComponent } from './components/splash/splash.component';
 
 const routes = [
+  {path: '', component: SplashComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   { path: 'list', component: CategoryListComponent },
@@ -40,6 +43,9 @@ const routes = [
   { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
+  { path: 'admin', canActivate: [AdminGuard], children: [
+    { path: '', component: DashboardComponent }
+  ]},
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -72,7 +78,7 @@ const routes = [
     MatProgressBarModule,
     MatSelectModule,
     MatTableModule,
-    MatIconModule
+    AdminModule,
   ],
   providers: [
     AuthService,
@@ -80,6 +86,7 @@ const routes = [
     ScoreBarService,
     NotespaceService,
     ArchiveService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

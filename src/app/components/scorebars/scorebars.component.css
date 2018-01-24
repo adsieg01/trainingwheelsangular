@@ -11,11 +11,17 @@
 .chart{
     position: relative;
     padding-left: 10%;
+    float: left;
     width: 600px;
 }
 .categoryList{
     float: left;
     width: 200px;
+}
+
+#scoreTracker{
+    float: right;
+    padding-right: 10%;
 }
 
 ul{

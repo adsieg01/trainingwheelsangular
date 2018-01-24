@@ -14,6 +14,7 @@ const Api_Url = 'http://localhost:65475'
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  isAdmin = new Subject<boolean>();
   
   // Declare variable that determines if there has been an http error response or not, to a login request
   loginError: boolean;
@@ -33,6 +34,7 @@ export class AuthService {
       localStorage.setItem('id_token', token.access_token);
       localStorage.setItem('login', '1')
       this.isLoggedIn.next(true);
+      this._http.get(`${Api_Url}/api/Account/isAdmin`, { headers: this.setHeader() }).subscribe((res: boolean) => this.isAdmin.next(res))
       this._router.navigate(['/'])},
       (error) => {
         // sets the error that a login failed
@@ -47,10 +49,12 @@ export class AuthService {
 
     return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() } );
   }
+
   
   logout(): Observable<Object> {
     localStorage.clear();
     this.isLoggedIn.next(false);
+    this.isAdmin.next(false);
     this._router.navigate(['/']);
     return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
   }
