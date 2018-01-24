@@ -1,0 +1,68 @@
+.bike{
+    position: fixed;
+    z-index: -1000;
+    left: 500px;
+    bottom:20px;
+}
+
+.bike {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes slideInLeft {
+    0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    }
+    @keyframes slideInLeft {
+    0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+
+}
+
+.nav-btn{
+    color: black;
+}
+        
+
+.shape {
+    width:100%;
+    margin:0 auto;
+    z-index: -1000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.top {
+    height:0;
+    border-width:0 0 1000px 3500px;
+    border-style:solid;
+    border-color:transparent rgba(85, 5, 5, 0.75) rgba(85, 5, 5, 0.75) transparent;
+}
+.bottom {
+    height: 100%;
+    background-color:rgba(85, 5, 5, 0.75) ;
+}
+
+* html .top {
+    filter:chroma(color=#123456);
+    border-top-color:#123456;
+    border-left-color:#123456;
+}

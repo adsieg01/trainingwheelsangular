@@ -5,8 +5,7 @@
     height: 300px;
     width: 60%;
     display: inline-block;
-    overflow: hidden;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 } 
 
 .chart{

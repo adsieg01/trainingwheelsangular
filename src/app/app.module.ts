@@ -39,6 +39,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   { path: 'list', component: CategoryListComponent },
+  { path: '', component: SplashComponent },
   { path: 'scorebars', component: ScoreBarsComponent },
   { path: 'personalnotes', component: NotespaceComponent },
   { path: 'archives', component: ArchiveComponent },
