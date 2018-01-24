@@ -54,6 +54,7 @@ export class CategoryListComponent {
     this._archiveService.createArchiveEntry(actId).subscribe(
       data => {
         console.log(data);
+        window.location.reload();
         return true;
       },
       error => {

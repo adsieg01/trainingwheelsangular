@@ -1,9 +1,17 @@
-.textbox {
-    width: 80%;
+.titlesection{
+    /* padding-left: 178px; */
+    float: left;
 }
 
-.container.note {
-    margin: 1.5em 0 0 10%;
+.notespace{
+    padding: 50px;
+    padding-left: 100px;
+    width: 50%;
+    position: inline-block;
+}
+
+.textbox {
+    width: 100%;
 }
 
 .container.error {

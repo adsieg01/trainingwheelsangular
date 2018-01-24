@@ -5,18 +5,23 @@
     height: 300px;
     width: 60%;
     display: inline-block;
-    overflow: hidden;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 } 
 
 .chart{
     position: relative;
     padding-left: 10%;
+    float: left;
     width: 600px;
 }
 .categoryList{
     float: left;
     width: 200px;
+}
+
+#scoreTracker{
+    float: right;
+    padding-right: 10%;
 }
 
 ul{
