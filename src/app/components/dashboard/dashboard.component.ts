@@ -12,7 +12,7 @@ import 'rxjs/add/observable/of';
 export class DashboardComponent implements OnInit {
 
   usersDataSource: UsersDataSource | null;
-  private usersColumnNames = ['userId', 'email', 'username'];
+  public usersColumnNames = ['userId', 'email', 'username'];
 
   constructor(private _usersService: UsersService) { }
 

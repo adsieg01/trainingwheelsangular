@@ -15,7 +15,7 @@ import 'rxjs/add/observable/of';
 })
 export class CategoryListComponent {
   selectedCategory: Category = new Category(0, '--Select--');
-  selectedActivity = {};
+  selectedActivity: Activity;
   categories: Category[];
   activities: Activity[];
   showWeeklyArchive = false;
